@@ -15,7 +15,7 @@
 // Custom video and audio player, similar style as the file download preview
 // Add tooltips to icon buttons, emojis, and maybe some other things
 // Fix Desktop Mode
-
+let crown = (p.u === eul[0]);;
 let end = false;
 let page = "load";
 const sidediv = document.querySelectorAll(".side");
@@ -568,7 +568,11 @@ function loadpost(p) {
 
     const pstinf = document.createElement("span");
     pstinf.classList.add("user-header")
-    pstinf.innerHTML = `<span id='username' onclick='openUsrModal("${user}")'>${user}</span>`;
+    if crown {
+    pstinf.innerHTML = <span id='username' onclick='openUsrModal("${user}👑")'>${user}</span>;
+    } else {
+        pstinf.innerHTML = <span id='username' onclick='openUsrModal("${user}")'>${user}</span>;
+    }
 
     if (bridged || p.u == "Webhooks") {
         const bridged = document.createElement("bridge");
